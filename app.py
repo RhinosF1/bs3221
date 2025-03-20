@@ -18,29 +18,22 @@ def favicon():
 
 @app.route('/hello', methods=['POST'])
 def hello():
-   name = request.form.get('name')
-   data  = [
-     {"name": "Test User", "Number": "123456", "Location": "Alwyn Hall"},
-     {"name": "Test Person", "Number": "234567", "Location": "WDC"}, 
-     {"name": "Test Staff", "Number": "345678", "Location": "St Elizabeth’s Hall"}
-   ]
-  table = """<table><thead>
-  <tr>
-    <th>Staff Name</th>
-    <th>Staff Number</th>
-    <th>Location</th>
-    <th></th>
-  </tr></thead>
-<body>"""
-   for row in data:
-     table = table + f"<tr><td>{row['name']}</td><td>{row['Number']}</td><td>{row['Location']}</td><td></td></tr>"
-   table = table + "</tbody></table>"
-   if name:
-       print('Request for hello page received with name=%s' % name)
-       return render_template('hello.html', name = name)
-   else:
-       print('Request for hello page received with no name or blank name -- redirecting')
-       return redirect(url_for('index'))
+  name = request.form.get('name')
+  data  = [
+    {"name": "Test User", "Number": "123456", "Location": "Alwyn Hall"},
+    {"name": "Test Person", "Number": "234567", "Location": "WDC"}, 
+    {"name": "Test Staff", "Number": "345678", "Location": "St Elizabeth’s Hall"}
+  ]
+  table = "<table><thead><tr><th>Staff Name</th><th>Staff Number</th><th>Location</th></tr></thead><tbody>"
+  for row in data:
+    table = table + f"<tr><td>{row['name']}</td><td>{row['Number']}</td><td>{row['Location']}</td><td></td></tr>"
+  table = table + "</tbody></table>"
+  if name:
+    print('Request for hello page received with name=%s' % name)
+    return render_template('hello.html', name = name, table = table)
+  else:
+    print('Request for hello page received with no name or blank name -- redirecting')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

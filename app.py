@@ -4,7 +4,7 @@ import mysql.connector
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for, flash, render_template_string)
 mydb = mysql.connector.connect(
-  host="localhost",
+  host=os.environ.get("DB_HOST", "localhost"),
   user=os.environ.get("DB_USERNAME", "root"),
   password=os.environ.get("DB_PASSWORD", "password"),
   database="fire_warden"

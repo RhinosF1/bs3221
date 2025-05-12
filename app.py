@@ -34,7 +34,40 @@ def hello():
       "345678": "Test Staff",
     }
     data_reversed = {v: k for k, v in data.items()}
-    location_list = ['Building A', 'Building B', 'Building C']
+    buildings = [
+      "Alwyn Hall",
+      "Beech Glade",
+      "Bowers Building",
+      "Burma Road Student Village",
+      "Centre for Sport",
+      "Chapel",
+      "The Cottage",
+      "Fred Wheeler Building",
+      "Herbert Jarman Building",
+      "Holm Lodge",
+      "Kenneth Kettle Building",
+      "King Alfred Centre",
+      "Martial Rose Library",
+      "Masters Lodge",
+      "Medecroft",
+      "Medecroft Annexe",
+      "Paul Chamberlain Building",
+      "Queen’s Road Student Village",
+      "St Alphege",
+      "St Edburga",
+      "St Elizabeth’s Hall",
+      "St Grimbald’s Court",
+      "St James’ Hall",
+      "St Swithun’s Lodge",
+      "The Stripe",
+      "Business School",
+      "Tom Atkinson Building",
+      "West Downs Centre",
+      "West Downs Student Village",
+      "Winton Building",
+      "Students’ Union"
+  ]
+
     name_found = False
 
     cursor = mydb.cursor()

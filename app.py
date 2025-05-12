@@ -34,7 +34,7 @@ def hello():
       "345678": "Test Staff",
     }
     data_reversed = {v: k for k, v in data.items()}
-    buildings = [
+    location_list = [
       "Alwyn Hall",
       "Beech Glade",
       "Bowers Building",
